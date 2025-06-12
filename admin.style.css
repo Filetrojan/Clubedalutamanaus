@@ -1,0 +1,246 @@
+body {
+    background-color: #121212;
+    color: #e0e0e0;
+    font-family: sans-serif;
+    margin: 0;
+    padding: 20px;
+}
+.container {
+    max-width: 1000px;
+    margin: 0 auto;
+}
+h1, h2, h3 {
+    color: #ff4d4d;
+    text-align: center;
+}
+
+/* MINI PAINEL */
+.mini-panel {
+    background-color: #1a1a1a;
+    border: 1px solid #333;
+    border-radius: 8px;
+    padding: 15px;
+    margin-bottom: 30px;
+    text-align: center;
+}
+.btn-delete-all {
+    background-color: #d32f2f;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    font-size: 1em;
+    cursor: pointer;
+    font-weight: bold;
+}
+.btn-delete-all:hover {
+    background-color: #f44336;
+}
+
+/* TABELA E BOTÕES */
+.table-container {
+    overflow-x: auto; 
+    -webkit-overflow-scrolling: touch; 
+    border-radius: 8px; 
+    box-shadow: 0 0 10px rgba(255, 0, 0, 0.5); 
+}
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 0; 
+    min-width: 800px; 
+}
+thead {
+    background-color: #ff4d4d;
+    color: #fff;
+}
+th, td {
+    padding: 12px 15px;
+    border: 1px solid #333;
+    text-align: left;
+    white-space: nowrap;
+}
+td:last-child {
+    white-space: normal; /* Permite que os botões quebrem a linha se necessário */
+}
+tbody tr { background-color: #1a1a1a; }
+tbody tr:nth-of-type(even) { background-color: #2a2a2a; }
+tbody tr:hover { background-color: #444; }
+
+/* === BOTÕES DE AÇÃO NA TABELA === */
+.action-button {
+    color: white;
+    border: 1px solid;
+    border-radius: 4px;
+    padding: 5px 10px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.2s;
+    margin-right: 5px;
+    margin-bottom: 5px; /* Para espaçar em telas pequenas */
+}
+.action-button:disabled {
+    opacity: 0.3;
+    cursor: not-allowed;
+}
+.btn-edit { background-color: #1976D2; border-color: #64B5F6; }
+.btn-edit:hover:not(:disabled) { background-color: #2196F3; }
+
+.btn-delete { background-color: #8B0000; border-color: #ff4d4d; }
+.btn-delete:hover:not(:disabled) { background-color: #ff0000; }
+
+.btn-move { background-color: #444; border-color: #888; font-size: 1.1em; }
+.btn-move:hover:not(:disabled) { background-color: #666; }
+
+
+/* JANELA MODAL DE EDIÇÃO */
+.modal-backdrop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+.modal-backdrop.hidden {
+    display: none;
+}
+.modal-content {
+    background-color: #2a2a2a;
+    padding: 30px;
+    border-radius: 8px;
+    border: 1px solid #ff4d4d;
+    width: 90%;
+    max-width: 500px;
+}
+.modal-content h2 { margin-top: 0; }
+.modal-content .form-group { margin-bottom: 15px; }
+.modal-content label { display: block; margin-bottom: 5px; }
+.modal-content input, .modal-content select {
+    width: 100%;
+    padding: 10px;
+    background-color: #333;
+    border: 1px solid #555;
+    color: #fff;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+.form-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+    margin-top: 20px;
+}
+.btn-save { background-color: #4CAF50; color: white; }
+.btn-cancel { background-color: #f44336; color: white; }
+.btn-save, .btn-cancel {
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+}
+body {
+    background-color: #121212;
+    color: #e0e0e0;
+    font-family: sans-serif;
+    margin: 0;
+    padding: 20px;
+}
+.container {
+    max-width: 1000px;
+    margin: 0 auto;
+}
+h1, h2, h3 {
+    color: #ff4d4d;
+    text-align: center;
+}
+
+/* MINI PAINEL */
+.mini-panel {
+    background-color: #1a1a1a;
+    border: 1px solid #333;
+    border-radius: 8px;
+    padding: 15px;
+    margin-bottom: 30px;
+    text-align: center;
+}
+.btn-delete-all {
+    background-color: #d32f2f;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    font-size: 1em;
+    cursor: pointer;
+    font-weight: bold;
+}
+.btn-delete-all:hover {
+    background-color: #f44336;
+}
+
+/* TABELAS E BOTÕES */
+.table-container {
+    overflow-x: auto; 
+    -webkit-overflow-scrolling: touch; 
+    border-radius: 8px; 
+    box-shadow: 0 0 10px rgba(255, 0, 0, 0.5); 
+    margin-bottom: 40px;
+}
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 0; 
+    min-width: 800px; 
+}
+thead {
+    background-color: #ff4d4d;
+    color: #fff;
+}
+th, td {
+    padding: 12px 15px;
+    border: 1px solid #333;
+    text-align: left;
+    white-space: nowrap;
+}
+td:last-child {
+    white-space: normal;
+}
+tbody tr { background-color: #1a1a1a; }
+tbody tr:nth-of-type(even) { background-color: #2a2a2a; }
+tbody tr:hover { background-color: #444; }
+
+.action-button {
+    color: white; border: 1px solid; border-radius: 4px; padding: 5px 10px;
+    cursor: pointer; font-weight: bold; transition: background-color 0.2s;
+    margin-right: 5px; margin-bottom: 5px;
+}
+.action-button:disabled { opacity: 0.3; cursor: not-allowed; }
+.btn-edit { background-color: #1976D2; border-color: #64B5F6; }
+.btn-edit:hover:not(:disabled) { background-color: #2196F3; }
+.btn-delete { background-color: #8B0000; border-color: #ff4d4d; }
+.btn-delete:hover:not(:disabled) { background-color: #ff0000; }
+.btn-move { background-color: #444; border-color: #888; font-size: 1.1em; }
+.btn-move:hover:not(:disabled) { background-color: #666; }
+
+/* ESTILOS NOVOS PARA A TABELA DE APOSTAS */
+.btn-approve { background-color: #4CAF50; border-color: #81C784; }
+.btn-approve:hover:not(:disabled) { background-color: #66BB6A; }
+.status {
+    font-weight: bold; padding: 5px 8px; border-radius: 4px;
+    text-align: center; text-transform: uppercase; font-size: 0.8em;
+}
+.status.pendente { color: #FFC107; }
+.status.aprovada { color: #4CAF50; }
+hr.section-divider {
+    border: 0; height: 1px;
+    background-image: linear-gradient(to right, rgba(0,0,0,0), rgba(255, 77, 77, 0.75), rgba(0,0,0,0));
+    margin: 50px 0;
+}
+
+/* MODAL DE EDIÇÃO */
+/* ... (estilos do modal como antes) ... */

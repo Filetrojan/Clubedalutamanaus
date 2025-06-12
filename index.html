@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clube da Luta Manaus - Clandestino</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@700&family=Roboto+Mono:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <audio id="musica-fundo" src="musica-fundo.mp3" autoplay loop></audio>
+
+    <header class="hero-section">
+        <div class="container">
+            <div class="site-logo-container header-logo">
+                <img src="logo.jpg" alt="Clube da Luta Manaus Logo" class="site-logo">
+            </div>
+            <h1>CLUBE DA LUTA MANAUS</h1>
+            <p>Lute. Aposte. Viva. Onde o asfalto encontra a selva.</p>
+            <a href="#main-content-area" class="btn-main">ENTRAR NO CLUBE</a>
+        </div>
+    </header>
+
+    <main id="page-content">
+        <section id="main-content-area" class="section-main-content">
+            <div class="container">
+                <div class="main-cards-grid">
+                    <div class="card inscricao-card">
+                        <h2>INSCRIÇÃO DE LUTADORES</h2>
+                        <form id="formInscricao" class="inscricao-form">
+                            <div class="form-group"><label for="nome">Nome:</label><input type="text" id="nome" name="nome" required></div>
+                            <div class="form-group"><label for="peso">Peso (kg):</label><input type="number" id="peso" name="peso" step="0.1" required></div>
+                            <div class="form-group"><label for="instagram">Instagram (@):</label><input type="text" id="instagram" name="instagram" placeholder="Ex: @seuinstagram"></div>
+                            <div class="form-group"><label for="estilo">Estilo de Luta:</label><select id="estilo" name="estilo" required><option value="">Selecione</option><option value="Muay Thai">Muay Thai</option><option value="Boxe">Boxe</option><option value="Jiu-Jitsu">Jiu-Jitsu</option><option value="Outro">Outro</option></select></div>
+                            <div class="form-group"><label for="whatsapp">WhatsApp (com DDD):</label><input type="tel" id="whatsapp" name="whatsapp" placeholder="Ex: 92991234567" required></div>
+                            <button type="submit" class="btn-submit">INSCREVER</button>
+                        </form>
+                    </div>
+                    <div class="card ranking-card">
+                        <h2>RANKING DOS INSCRITOS</h2>
+                        <div class="ranking-header">
+                            <span class="rank-col-num">#</span>
+                            <span class="rank-col-nome">Nome</span>
+                            <span class="rank-col-instagram">Instagram</span>
+                            <span class="rank-col-peso">Peso</span>
+                            <span class="rank-col-emoji">Emoji</span>
+                            <span class="rank-col-acoes admin-only">Ações</span>
+                        </div>
+                        <div id="lista-ranking" class="ranking-list"></div>
+                        <div id="admin-logout-container" class="admin-only">
+                            <button id="btn-logout" class="btn-logout">Sair do Modo Admin</button>
+                        </div>
+                    </div>
+                    <div class="card apostas-form-card">
+                        <h2>FAÇA SUA APOSTA</h2>
+                        <form id="formAposta" class="aposta-form">
+                            <div class="form-group"><label for="apostadorNome">Seu Nome:</label><input type="text" id="apostadorNome" name="apostadorNome" required></div>
+                            <div class="form-group"><label for="apostaLutador">Apostar em:</label><select id="apostaLutador" name="apostaLutador" required><option value="">Selecione um Lutador</option></select></div>
+                            <div class="form-group"><label for="valorAposta">Valor (R$):</label><input type="number" id="valorAposta" name="valorAposta" step="0.01" required></div>
+                            <button type="submit" class="btn-apostar-yellow">REGISTRAR APOSTA</button>
+                            <p class="whatsapp-disclaimer-aposta">*Você será redirecionado para o WhatsApp para confirmar a aposta.</p>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <div class="container">
+            <hr class="section-divider">
+        </div>
+        
+        <section class="section-apostas-destaque">
+            <div class="container">
+                <h2>🔥 RANKING DAS APOSTAS 🔥</h2>
+                <div id="ranking-apostas" class="apostas-grid"></div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <button id="btn-musica" class="btn-sound">▶️ Som</button>
+            <p>&copy; 2025 Clube da Luta Manaus. Todos os direitos reservados. Não seja pego.</p>
+            
+            <div class="developer-signature">
+                <a href="#" target="_blank" rel="noopener noreferrer">VR</a>
+                <span>codificou este site com</span>
+                <span class="heart-icon">❤️</span>
+                <span>e</span>
+                <span class="code-icon">&lt;/&gt;</span>
+            </div>
+            </div>
+    </footer>
+    
+    <div id="edit-modal" class="modal-backdrop hidden">
+        <div class="modal-content">
+            <h2>Editar Lutador</h2>
+            <form id="edit-form">
+                <input type="hidden" id="edit-index">
+                <div class="form-group"><label for="edit-nome">Nome:</label><input type="text" id="edit-nome" required></div>
+                <div class="form-group"><label for="edit-peso">Peso (kg):</label><input type="number" id="edit-peso" step="0.1" required></div>
+                <div class="form-group"><label for="edit-instagram">Instagram:</label><input type="text" id="edit-instagram"></div>
+                <div class="form-group"><label for="edit-estilo">Estilo:</label><select id="edit-estilo" required><option value="Muay Thai">Muay Thai</option><option value="Boxe">Boxe</option><option value="Jiu-Jitsu">Jiu-Jitsu</option><option value="Outro">Outro</option></select></div>
+                <div class="form-group"><label for="edit-whatsapp">WhatsApp:</label><input type="tel" id="edit-whatsapp" required></div>
+                <div class="form-actions">
+                    <button type="submit" class="btn-save">Salvar Alterações</button>
+                    <button type="button" id="btn-cancel-edit" class="btn-cancel">Cancelar</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <div id="success-modal" class="modal-backdrop hidden">
+        <div class="modal-content success-content">
+            <span class="success-icon">✅</span>
+            <h2 id="success-title">Inscrição Recebida!</h2>
+            <p id="success-message">Nossa equipe analisará seus dados e entrará em contato pelo WhatsApp em breve. Obrigado!</p>
+            <button id="btn-close-success" class="btn-main">OK</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

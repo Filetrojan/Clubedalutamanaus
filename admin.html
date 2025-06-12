@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Painel de Controle - Lutadores</title>
+    <link rel="stylesheet" href="admin.style.css">
+</head>
+<body>
+
+    <div class="container">
+        <h1>Painel de Administrador</h1>
+
+        <div class="mini-panel">
+            <h3>Controles Gerais</h3>
+            <button id="btn-delete-all" class="btn-delete-all">⚠️ Apagar TODA a Lista de Lutadores</button>
+        </div>
+
+        <h2>Lutadores Inscritos</h2>
+
+        <div class="table-container">
+            <table id="tabela-lutadores">
+                <thead>
+                    <tr>
+                        <th>Nome</th>
+                        <th>Peso (kg)</th>
+                        <th>Instagram</th>
+                        <th>Estilo</th>
+                        <th>WhatsApp</th>
+                        <th>Ações</th> 
+                    </tr>
+                </thead>
+                <tbody id="lista-admin">
+                    </tbody>
+            </table>
+        </div>
+
+        <hr class="section-divider">
+        <h2>Apostas Recebidas</h2>
+        <div class="table-container">
+            <table id="tabela-apostas">
+                <thead>
+                    <tr>
+                        <th>Apostador</th>
+                        <th>Apostou em</th>
+                        <th>Valor (R$)</th>
+                        <th>Status</th>
+                        <th>Ações</th>
+                    </tr>
+                </thead>
+                <tbody id="lista-apostas">
+                    </tbody>
+            </table>
+        </div>
+        </div>
+
+    <div id="edit-modal" class="modal-backdrop hidden">
+        </div>
+
+    <script src="admin.script.js"></script>
+</body>
+</html>

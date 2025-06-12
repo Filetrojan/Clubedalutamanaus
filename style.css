@@ -1,0 +1,192 @@
+/* ================================= */
+/* ESTILOS GERAIS E FONTES */
+/* ================================= */
+body {
+    background-color: #121212;
+    color: #e0e0e0;
+    font-family: 'Roboto Mono', monospace;
+    margin: 0;
+    line-height: 1.6;
+}
+h1, h2, h3 {
+    font-family: 'Oswald', sans-serif;
+    text-transform: uppercase;
+    color: #ff4d4d;
+    text-shadow: 0 0 5px rgba(255, 0, 0, 0.7);
+}
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+/* SEÇÃO DO TOPO (HERO) */
+.hero-section {
+    background-image: url('https://upload.wikimedia.org/wikipedia/commons/6/68/Solid_black.png');
+    background-color: #000;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    text-align: center;
+    padding: 60px 20px; 
+    border-bottom: 3px solid #ff4d4d;
+}
+.site-logo { max-width: 240px; margin-bottom: 20px; }
+.hero-section h1 { font-size: 3.5rem; margin: 0; }
+.hero-section p { font-size: 1.2rem; }
+.btn-main { display: inline-block; background-color: #ff4d4d; color: #fff; padding: 12px 25px; text-decoration: none; font-weight: bold; border-radius: 5px; margin-top: 20px; transition: background-color 0.3s, transform 0.3s; }
+.btn-main:hover { background-color: #ff0000; transform: scale(1.05); }
+
+/* GRID PRINCIPAL E CARDS */
+.section-main-content { padding-top: 40px; }
+.main-cards-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; }
+.card {
+    background-color: #1a1a1a; padding: 25px; border-radius: 8px; border: 2px solid #ff4d4d; 
+    box-shadow: 0 0 5px #ff0000, 0 0 15px #ff0000, 0 0 30px #ff0000, inset 0 0 10px rgba(255, 77, 77, 0.5); 
+    display: flex;
+    flex-direction: column;
+}
+.card h2 { text-align: center; margin-bottom: 25px; }
+
+/* FORMULÁRIOS E RANKING (PC) */
+.form-group { margin-bottom: 15px; }
+.form-group label { display: block; margin-bottom: 5px; font-weight: bold; }
+.form-group input, .form-group select { width: 100%; padding: 10px; background-color: #333; border: 1px solid #555; color: #fff; border-radius: 4px; box-sizing: border-box; }
+.btn-submit, .btn-apostar-yellow { width: 100%; padding: 12px; border: none; border-radius: 5px; font-weight: bold; cursor: pointer; text-transform: uppercase; transition: all 0.3s; margin-top: auto; }
+.btn-submit { background-color: #ff4d4d; color: #fff; }
+.btn-submit:hover { background-color: #fff; color: #ff0000; }
+.ranking-header, .ranking-item { display: grid; grid-template-columns: 30px 1fr 1fr 60px 40px; gap: 10px; padding: 8px 0; align-items: center; border-bottom: 1px solid #333; }
+.ranking-header { font-weight: bold; color: #ff4d4d; }
+
+/* CONTROLES DE ADMIN */
+.admin-only { display: none; }
+.rank-col-acoes, .ranking-item-acoes { text-align: center; }
+.btn-admin-action { background: none; border: none; cursor: pointer; font-size: 1.2em; padding: 5px; transition: transform 0.2s; }
+.btn-admin-action:hover { transform: scale(1.2); }
+.btn-logout { display: block; margin: 20px auto 0; background-color: #1976D2; color: white; border: none; padding: 8px 15px; border-radius: 5px; cursor: pointer; }
+
+/* MODAL DE EDIÇÃO */
+.modal-backdrop { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0, 0, 0, 0.8); display: flex; justify-content: center; align-items: center; z-index: 1000; }
+.modal-backdrop.hidden { display: none; }
+.modal-content { background-color: #2a2a2a; padding: 30px; border-radius: 8px; border: 1px solid #ff4d4d; width: 90%; max-width: 500px; }
+.modal-content h2 { margin-top: 0; }
+.form-actions { display: flex; justify-content: flex-end; gap: 10px; margin-top: 20px; }
+.btn-save { background-color: #4CAF50; color: white; }
+.btn-cancel { background-color: #f44336; color: white; }
+.btn-save, .btn-cancel { border: none; padding: 10px 20px; border-radius: 5px; cursor: pointer; font-weight: bold; }
+
+/* MODAL DE SUCESSO */
+.modal-content.success-content { background: #1a1a1a; border-color: #4CAF50; text-align: center; }
+.success-icon { font-size: 4rem; line-height: 1; display: block; margin-bottom: 15px; }
+.success-content h2 { color: #4CAF50; font-size: 2rem; }
+.success-content p { color: #e0e0e0; font-size: 1.1rem; margin-bottom: 25px; }
+.success-content .btn-main { background-color: #4CAF50; }
+.success-content .btn-main:hover { background-color: #66BB6A; }
+
+/* ÁREA DE APOSTAS PENDENTES (ADMIN) */
+#pending-bets-admin-area h3 { color: #1976D2; text-align: left; border-bottom: 2px solid #1976D2; padding-bottom: 10px; margin-top: 0; }
+.pending-bet-item { display: grid; grid-template-columns: 2fr 2fr 1fr 1.5fr; gap: 15px; align-items: center; background-color: #2a2a2a; padding: 15px; border-radius: 5px; margin-bottom: 10px; border-left: 5px solid #1976D2; }
+.pending-bet-details { font-size: 0.9em; }
+.pending-bet-details strong { color: #ffc107; }
+.pending-bet-actions button { color: white; border: none; border-radius: 4px; padding: 8px 12px; cursor: pointer; font-weight: bold; margin-right: 5px; }
+.btn-approve { background-color: #4CAF50; }
+.btn-reject { background-color: #f44336; }
+hr.admin-divider { border: 0; height: 1px; background-image: linear-gradient(to right, rgba(0,0,0,0), rgba(255, 77, 77, 0.75), rgba(0,0,0,0)); margin: 40px 0; }
+hr.section-divider { border: 0; height: 2px; background-image: linear-gradient(to right, rgba(0,0,0,0), rgba(255, 77, 77, 0.75), rgba(0,0,0,0)); margin: 40px 0; }
+
+/* RANKING DE APOSTAS EM DESTAQUE */
+.section-apostas-destaque { padding: 20px 0 40px 0; background-color: #0d0d0d; }
+.section-apostas-destaque h2 { text-align: center; font-size: 2.5rem; margin-bottom: 30px; color: #ffc107; text-shadow: 0 0 10px rgba(255, 193, 7, 0.5); }
+.apostas-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 25px; }
+.aposta-card { background: linear-gradient(145deg, #1e1e1e, #121212); border: 2px solid #ffc107; border-radius: 10px; padding: 25px; box-shadow: 0 0 20px rgba(255, 193, 7, 0.4); text-align: center; display: flex; flex-direction: column; justify-content: center; align-items: center; transition: transform 0.3s, box-shadow 0.3s; }
+.aposta-card:hover { transform: translateY(-10px) scale(1.03); box-shadow: 0 0 30px rgba(255, 193, 7, 0.7); }
+.apostador-nome { font-family: 'Oswald', sans-serif; font-size: 1.8rem; color: #fff; margin: 0; }
+.aposta-detalhes { font-size: 1rem; color: #ccc; margin: 10px 0; }
+.aposta-detalhes strong { color: #ff4d4d; font-weight: bold; }
+.aposta-valor { font-size: 2.2rem; font-weight: 700; color: #4CAF50; margin: 15px 0 0 0; text-shadow: 0 0 10px rgba(76, 175, 80, 0.7); }
+.stat-link { text-decoration: none; color: inherit; }
+.stat-item .instagram-icon { width: 1.2em; height: 1.2em; fill: currentColor; }
+
+/* BOTÃO DE SOM E FOOTER */
+.btn-sound { background-color: #ff4d4d; color: white; border: none; border-radius: 5px; padding: 8px 15px; cursor: pointer; font-family: 'Roboto Mono', monospace; margin-bottom: 15px; transition: background-color 0.3s; }
+.btn-sound:hover { background-color: #ff0000; }
+.footer { text-align: center; padding: 20px; margin-top: 40px; border-top: 1px solid #333; }
+
+/* RESPONSIVIDADE */
+@media (max-width: 900px) {
+    .hero-section h1 { font-size: 2.5rem; }
+    .section-apostas-destaque h2 { font-size: 2rem; }
+    .main-cards-grid { grid-template-columns: 1fr; gap: 40px; }
+    .ranking-header { display: none; }
+    .ranking-item { display: flex; flex-direction: column; padding: 12px; border: 1px solid #444; border-radius: 8px; margin-bottom: 12px; background: linear-gradient(145deg, #2a2a2a, #1a1a1a); gap: 8px; }
+    .ranking-card-header { display: flex; align-items: center; gap: 12px; border-bottom: 1px solid #ff4d4d; padding-bottom: 8px; }
+    .ranking-card-pos { font-size: 1.2em; font-weight: bold; color: #ffc107; }
+    .ranking-card-nome { font-family: 'Oswald', sans-serif; font-size: 1.3em; color: #fff; }
+    .ranking-card-body { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+    .stat-item { display: flex; align-items: center; gap: 8px; font-size: 0.9em; color: #ccc; background-color: #1a1a1a; padding: 5px 8px; border-radius: 4px; }
+    .stat-icon { font-size: 1.1em; }
+    .ranking-item span, .ranking-item span::before { all: unset; }
+    .ranking-item-acoes { display: flex; justify-content: flex-end; gap: 10px; margin-top: 5px; padding-top: 8px; border-top: 1px solid #444; }
+    .pending-bet-item { grid-template-columns: 1fr; }
+}
+@media (max-width: 480px) {
+    .hero-section h1 { font-size: 2.2rem; }
+    .card { padding: 15px; }
+    .apostas-grid { grid-template-columns: 1fr; }
+    .ranking-card-body { grid-template-columns: 1fr; }
+}
+/* ================================= */
+/* ASSINATURA DO DESENVOLVEDOR */
+/* ================================= */
+/* === AJUSTE PARA A ASSINATURA NO CELULAR === */
+    .developer-signature {
+        flex-wrap: wrap; /* Permite que os itens quebrem para a próxima linha */
+        gap: 6px; /* Diminui um pouco o espaço entre as palavras */
+        line-height: 1.6; /* Melhora o espaçamento se quebrar em duas linhas */
+    }
+}
+.developer-signature {
+    margin-top: 25px;
+    font-size: 0.9em;
+    color: #888; /* Uma cor mais sutil */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px; /* Espaço entre os elementos */
+    font-family: 'Courier New', Courier, monospace; /* Uma fonte com cara de "código" */
+    transition: color 0.4s;
+}
+
+.developer-signature:hover {
+    color: #ccc; /* Clareia um pouco ao passar o mouse */
+}
+
+.developer-signature a {
+    color: #ff4d4d; /* Cor de destaque para suas iniciais */
+    text-decoration: none;
+    font-weight: bold;
+    transition: text-shadow 0.4s;
+}
+
+.developer-signature a:hover {
+    text-shadow: 0 0 8px rgba(255, 77, 77, 0.8);
+}
+
+.developer-signature .heart-icon {
+    color: #ff4d4d;
+    font-size: 1.2em;
+    animation: pulse 1.5s infinite;
+}
+
+.developer-signature .code-icon {
+    color: #1976D2; /* Um azul para o ícone de código */
+    font-weight: bold;
+    font-size: 1.2em;
+}
+
+/* Animação de pulsar para o coração */
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.2); }
+    100% { transform: scale(1); }
+}
